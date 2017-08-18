@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<script type="text/javascript">
+<script type="text/javascript" src="">
 
 $(document).ready(function(){
 
@@ -117,6 +117,30 @@ $(".btn-success").on("click",function(){
     //operand1, operand2, operator
     console.log(operand1, operand2, operator);
     //Function call to calculate result with parameters: operand1, operand2, operator
+            var result;
+            switch(operator) {
+                case "plus" :
+                    result = Number(operand1) + Number(operand2);
+                    $("#demo").html("The answer is " + result);
+                    break;
+                case "minus" :
+                    result = Number(operand1) - Number(operand2);
+                    $("#demo").html("The answer is " + result);
+                    break;
+                case "times" :
+                    result = Number(operand1) * Number(operand2);
+                    $("#demo").html("The answer is " + result);
+                    break;
+                case "divde" :
+                    result = Number(operand1) / Number(operand2);
+                    $("#demo").html("The answer is " + result);
+                    break;
+                case "power" :
+                    result = Number(operand1) ^ Number(operand2);
+                    $("#demo").html("The answer is " + result);
+                    break;
+            }
+        $("#result").html(result);
 });
 
 $(".btn-default").on("click",function(){
@@ -125,6 +149,7 @@ $(".btn-default").on("click",function(){
     operand2Arr=[];
     operand2=0;
     operator=[];
+    result=0;
     $("#first-number").html("");
     $("#second-number").html("");
     $("#operator").html("");
